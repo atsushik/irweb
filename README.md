@@ -7,7 +7,22 @@ iirkitもどきを安く作るための何か
 - [赤外線リモコン受信モジュール　ＧＰ１ＵＸＣ４１ＱＳ](http://akizukidenshi.com/catalog/g/gI-06487/)
 - [角型２色ＬＥＤ　赤・黄緑　ＧＬ８ＥＤ４８　（１０個)](http://akizukidenshi.com/catalog/g/gI-03255/)
 
+## 配線
+NODEMCUの絵を使っているけど、WROOMに適宜読み替える
+![配線図](https://raw.githubusercontent.com/atsushik/irweb/master/irweb.png)
+
+## 依存しているライブラリ
+- [tzapu/WiFiManager](https://github.com/tzapu/WiFiManager)
+- [markszabo/IRremoteESP8266](https://github.com/markszabo/IRremoteESP8266)
+- [bblanchon/ArduinoJson](https://github.com/bblanchon/ArduinoJson)
+
 ## 使い方
+
+### 初回起動時
+「irweb_c1a1」みたいなWIFI-APが出現するので、そこにつなぐ。
+少し待つと「Configure WiFi」と書かれたボタンが出るので、クリックして、表示されるAP一覧から接続したいのを選びパスワードを入力する。
+次回起動時からはその情報を使ってWIFIに接続するようになる。
+AP情報を消すにはWIFIモジュールの起動時に GPIO 5 をGNDに繋いでおくと、保存していた情報を消す。
 
 ### esp8266の探し方
 osxならdns-sd コマンドで _irweb._tcp を探すとホスト名がわかる。
