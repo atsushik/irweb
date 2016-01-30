@@ -18,13 +18,13 @@ Browsing for _irweb._tcp
 DATE: ---Sun 31 Jan 2016---
  2:21:45.561  ...STARTING...
 Timestamp     A/R    Flags  if Domain               Service Type         Instance Name
- 2:21:46.040  Add        2   5 local.               _irweb._tcp.         irweb_c5a2
+ 2:21:46.040  Add        2   5 local.               _irweb._tcp.         irweb_c1a1
 ```
 
 ### 受信
 受信したリモコンの信号は下記のURLにアクセスするとjson形式で取得できる
 
-http://_esp8266のIPかFQDN_/messages
+http://irweb_c1a1.local/messages
 ``` json:aquos_power.json
 {"format":"raw","freq":38,"len":99,"data":[3400,1700,450,450,450,1250,450,450,450,1250,450,450,450,1250,450,450,450,1250,450,450,450,1250,450,450,450,1250,450,1250,450,450,450,1250,450,450,450,1250,450,1250,450,1250,450,1250,450,450,450,450,450,450,450,1250,450,450,450,1250,450,450,450,450,450,1250,450,450,450,450,450,450,450,450,450,1250,450,1250,450,450,450,1250,450,450,450,450,450,450,450,1250,450,450,450,450,450,450,450,1250,450,450,450,1250,450,1250,450]}
 ```
@@ -33,7 +33,7 @@ http://_esp8266のIPかFQDN_/messages
 上記で取得したjsonをPOSTするとそれに応じてリモコン信号を送信する
 
 ``` sh:sendIrSignal.sh
-curl -i "http://irweb_c5a2.local/messages" -H "X-Requested-With: curl" --data-binary @/irweb/data/sharp/ac-222fd/warm20_Louver2.json
+curl -i "http://irweb_c1a1.local/messages" -H "X-Requested-With: curl" --data-binary @/irweb/data/sharp/ac-222fd/warm20_Louver2.json
 ```
 
 
