@@ -29,6 +29,16 @@ irkitもどきを安く作るための何か
 NODEMCUの絵を使っているけど、WROOMに適宜読み替える
 ![配線図](https://raw.githubusercontent.com/atsushik/irweb/master/irweb.png)
 
+| NODEMCU| GPIO|つなぐもの                   |
+|:------:|:---:|:---------------------------:|
+| D4     |   2 |                             |
+| D1     |   5 |                             |
+| D6     |  12 |５ｍｍ赤外線ＬＥＤ           |
+| D7     |  13 |角型２色ＬＥＤ　赤・黄緑 緑側|    
+| D5     |  14 |赤外線リモコン受信モジュール |
+| D8     |  15 |角型２色ＬＥＤ　赤・黄緑 赤側|
+| D0     |  16 |                             |
+
 ## 依存しているライブラリ
 - [tzapu/WiFiManager](https://github.com/tzapu/WiFiManager)
 - [markszabo/IRremoteESP8266](https://github.com/markszabo/IRremoteESP8266)
