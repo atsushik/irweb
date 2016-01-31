@@ -53,8 +53,9 @@ NODEMCUの絵を使っているけど、WROOMに適宜読み替える
 AP情報を消すにはWIFIモジュールの起動時に GPIO 5 をGNDに繋いでおくと、保存していた情報を消す。
 
 ### esp8266の探し方
-osxならdns-sd コマンドで _irweb._tcp を探すとホスト名がわかる。
-「irweb_」+「MACアドレスの下４文字」になっている
+ホスト名は「irweb_」+「MACアドレスの下４文字」になっている
+
+- osxならdns-sd コマンドで _irweb._tcp を探すとホスト名がわかる。
 ``` sh:find_irweb.sh
 $ dns-sd -B _irweb._tcp
 Browsing for _irweb._tcp
@@ -64,8 +65,7 @@ Timestamp     A/R    Flags  if Domain               Service Type         Instanc
  2:21:46.040  Add        2   5 local.               _irweb._tcp.         irweb_c1a1
 ```
 
-linuxならavahi-browse コマンドで _irweb._tcp を探すとホスト名がわかる。
-「irweb_」+「MACアドレスの下４文字」になっている
+- linuxならavahi-browse コマンドで _irweb._tcp を探すとホスト名がわかる。
 ``` sh:find_irweb.sh
 $ avahi-browse _irweb._tcp
 +   eth0 IPv4 irweb_c1a1                                    _irweb._tcp          local
