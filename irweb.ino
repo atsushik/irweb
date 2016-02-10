@@ -10,13 +10,17 @@
 //
 //#include <ArduinoJson.h>          // https://github.com/bblanchon/ArduinoJson
 
-// pin  2 is D4 on nodemcu
-// pin  5 is D1 on nodemcu
-// pin 12 is D6 on nodemcu
-// pin 13 is D7 on nodemcu
-// pin 14 is D5 on nodemcu
-// pin 15 is D8 on nodemcu
-// pin 16 is D0 on nodemcu
+// pin  0 is D3  on nodemcu
+// pin  1 is D10 on nodemcu
+// pin  2 is D4  on nodemcu
+// pin  3 is D9  on nodemcu
+// pin  4 is D2  on nodemcu
+// pin  5 is D1  on nodemcu
+// pin 12 is D6  on nodemcu
+// pin 13 is D7  on nodemcu
+// pin 14 is D5  on nodemcu
+// pin 15 is D8  on nodemcu
+// pin 16 is D0  on nodemcu
 
 int RESET_AP_SETTING_PIN = 5;
 int LED_RED  = 15;
