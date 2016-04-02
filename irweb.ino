@@ -56,12 +56,12 @@ void blink()
 
 void handleRoot() {
   blink();
-  char temp[400];
+  char temp[2048];
   int sec = millis() / 1000;
   int min = sec / 60;
   int hr = min / 60;
 
-  snprintf ( temp, 400,
+  snprintf ( temp, 2048,
 
              "<html>\
   <head>\
@@ -72,18 +72,17 @@ void handleRoot() {
     </style>\
   </head>\
   <body>\
-    <h1>Hello from ESP8266!</h1>\
+    <h1>%s</h1>\
     <p>Uptime: %02d:%02d:%02d</p>\
+    <p>ir-signal: %s</p>\
     <img src=\"/test.svg\" />\
     <br>\
     <pre></pre>\
   </body>\
 </html>",
-
-             hr, min % 60, sec % 60
+             myName.c_str(), hr, min % 60, sec % 60, jsonStr.c_str()
            );
   webserver.send ( 200, "text/html", temp );
-  //  digitalWrite ( led, 0 );
 }
 
 void handleMessages() {
